@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewHolder mViewHolder = new ViewHolder();
     private ArrayList<String> arraylistItens = new ArrayList<>();
+    private AdapterListItens mAdapter;
 
     private RecyclerView listaItens;
 
@@ -37,8 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 String item;
 
                 item = mViewHolder.txtItem.getText().toString();
-
-                arraylistItens.add(item);
+                mAdapter.addItem(item);
                 mViewHolder.txtItem.setText("");
 
             }
@@ -51,10 +51,12 @@ public class MainActivity extends AppCompatActivity {
         mViewHolder.listItens.setLayoutManager(lm);
 
         // cria o adapter, passando o arraylist no construtor
-        AdapterListItens adapter = new AdapterListItens(arraylistItens);
+//        AdapterListItens adapter = new AdapterListItens(arraylistItens);
+        mAdapter = new AdapterListItens();
+
 
         // configura o adapter no recyclerview
-        mViewHolder.listItens.setAdapter(adapter);
+        mViewHolder.listItens.setAdapter(mAdapter);
 
         // otimizacao do recyclerview
         mViewHolder.listItens.setHasFixedSize(true);

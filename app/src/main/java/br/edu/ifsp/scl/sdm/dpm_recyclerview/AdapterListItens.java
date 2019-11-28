@@ -9,14 +9,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AdapterListItens extends RecyclerView.Adapter<AdapterListItens.SaveListItens> {
 
-    private TextView text;
-    private ArrayList<String> listItens;
 
-    public AdapterListItens(ArrayList<String> listItens) {
-        this.listItens = listItens;
+    private List<String> listItens;
+
+    public AdapterListItens() {
+        this.listItens = new ArrayList<>();
+    }
+
+    public void addItem(String item){
+        this.listItens.add(item);
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -31,11 +37,10 @@ public class AdapterListItens extends RecyclerView.Adapter<AdapterListItens.Save
 
     public class SaveListItens extends RecyclerView.ViewHolder {
 
+        private TextView text1;
         public SaveListItens(@NonNull View itemView) {
             super(itemView);
-
-            text = itemView.findViewById(R.id.text);
-
+            text1 = itemView.findViewById(android.R.id.text1);
         }
     }
 
