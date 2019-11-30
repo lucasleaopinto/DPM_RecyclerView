@@ -20,7 +20,7 @@ public class AdapterListItens extends RecyclerView.Adapter<AdapterListItens.Save
         this.listItens = new ArrayList<>();
     }
 
-    public void addItem(String item){
+    public void addItem(String item) {
         this.listItens.add(item);
         notifyDataSetChanged();
     }
@@ -38,6 +38,7 @@ public class AdapterListItens extends RecyclerView.Adapter<AdapterListItens.Save
     public class SaveListItens extends RecyclerView.ViewHolder {
 
         private TextView text1;
+
         public SaveListItens(@NonNull View itemView) {
             super(itemView);
             text1 = itemView.findViewById(android.R.id.text1);

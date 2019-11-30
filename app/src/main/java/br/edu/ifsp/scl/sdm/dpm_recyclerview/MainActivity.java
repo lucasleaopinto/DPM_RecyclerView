@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         mViewHolder.listItens.setLayoutManager(lm);
 
         // cria o adapter, passando o arraylist no construtor
-//        AdapterListItens adapter = new AdapterListItens(arraylistItens);
+       //  AdapterListItens adapter = new AdapterListItens(arraylistItens);
         mAdapter = new AdapterListItens();
 
 
